@@ -8,6 +8,25 @@ public class auto4 {
 
         WebDriver driver=new ChromeDriver();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         driver.get("https://www.netflix.com/in/");
         driver.manage().window().maximize();
 
