@@ -18,7 +18,10 @@ public class Auto10 {
          driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[2]/div/div[1]/div/a[1]/div[1]/div/div")).click();
         Set<String> str=driver.getWindowHandles();
         System.out.println(str);
-
+        String str2=driver.getWindowHandle();
+        str.remove(str2);
+        driver.switchTo(str);
+        System.out.println(str2);
 
     }
 }
