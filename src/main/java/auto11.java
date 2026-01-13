@@ -1,0 +1,34 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+public class auto11 {
+    public static void main(String[] args){
+        WebDriver driver=new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
+        driver.navigate().to("https://www.flipkart.com/cr-decals-designs-axor-retro-dominator-dull-black-helmet-motorbike/p/itm8759f35fc308f");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[2]/div/div/div[2]/div/div/div[3]/div")).click();
+        driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[2]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div[2]/a/span")).click();
+        driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[2]/div/div[1]/div/a[1]/div[1]/div/div")).click();
+        Set<String> str=driver.getWindowHandles();
+        List<String> str2=new ArrayList<>(str);
+//        for(String s:str2)
+//        {driver.switchTo().window(s).getTitle();}
+         System.out.println(str2);
+         String a="Cs Ce2f7f7a95ef1712f2c88ce51e736aad - Buy Cs Ce2f7f7a95ef1712f2c88ce51e736aad Online at Low Prices In India | Flipkart.com";
+
+       for(String st:str2)
+       {
+           driver.switchTo().window(st);
+           System.out.println(st+" : "+driver.getTitle());
+       }
+
+    }
+}
