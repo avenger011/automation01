@@ -17,10 +17,14 @@ public class auto13 {
         driver.findElement(By.xpath("//input[@id=\"UserName\" and @name=\"UserName\"]")).sendKeys("admin");
         driver.findElement(By.xpath("//input[@id=\"Password\" and @name=\"Password\" and @type=\"password\"]")).sendKeys("password");
          driver.findElement(By.xpath("//input[@id=\"loginIn\" and @value=\"Log in\"]")).click();
-        driver.findElement(By.xpath("//a[text()=\"Employee List\"]")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul/li[3]/a")).click();
         driver.findElement(By.xpath("//a[text()=\"Manage Users\"]")).click();
-      WebElement dd= driver.findElement(By.xpath("//*[@id=\"RoleName\"]"));
+      WebElement dd= driver.findElement(By.xpath("(//*[@id=\"RoleName\"])[2]"));
       Select select=new Select(dd);
       select.selectByContainsVisibleText("Guest");
-      driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr[2]/td[4]/input")).click();
+      //driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr[2]/td[4]/input")).click();
+        WebElement dd1=driver.findElement(By.xpath("(//select[@id=\"RoleName\" and @name=\"RoleName\"])[5]"));
+        Select select1=new Select(dd1);
+        select1.selectByContainsVisibleText("User");
+
     }}
