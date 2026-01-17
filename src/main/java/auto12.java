@@ -1,3 +1,4 @@
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,7 +25,9 @@ public class auto12 {
          driver.switchTo().window(str2.get(1));
          String st=driver.getTitle();
           System.out.println(st) ;
-
+           Alert myalert=driver.switchTo().alert();
+           String s=myalert.getText();
+           myalert.accept();
 
 
     }
