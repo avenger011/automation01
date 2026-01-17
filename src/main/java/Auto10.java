@@ -3,6 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class Auto10 {
@@ -17,11 +19,11 @@ public class Auto10 {
         driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[2]/div/div/div[2]/div/div/div[1]/div/div[4]/div/div/div[2]/a/span")).click();
          driver.findElement(By.xpath("//*[@id=\"container\"]/div/div[3]/div[1]/div[2]/div[2]/div/div[1]/div/a[1]/div[1]/div/div")).click();
         Set<String> str=driver.getWindowHandles();
-        System.out.println(str);
-        String str2=driver.getWindowHandle();
-        str.remove(str2);
-        driver.switchTo(str);
-        System.out.println(str2);
 
+
+        List<String> str2=new ArrayList<>(str);
+        driver.switchTo().window(str2.get(1));
+
+        //System.out.println(str2);
     }
 }
