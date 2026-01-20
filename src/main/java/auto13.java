@@ -25,6 +25,7 @@ public class auto13 {
       //driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr[2]/td[4]/input")).click();
         WebElement dd1=driver.findElement(By.xpath("(//select[@id=\"RoleName\" and @name=\"RoleName\"])[5]"));
         Select select1=new Select(dd1);
-        select1.selectByContainsVisibleText("User");
-
+        select1.selectByContainsVisibleText("Guest");
+        driver.findElement(By.xpath("(//input[@type=\"submit\" and @value=\"Assign\"])[5]")).click();
     }}
+
