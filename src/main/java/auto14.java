@@ -2,7 +2,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;       //frames
 
@@ -26,12 +28,28 @@ public static void main(String[] args) throws InterruptedException {
     driver.switchTo().frame(fr3);
     driver.switchTo().frame(0);
     driver.findElement(By.xpath("//div[@class=\"vd3tt\"]/div[@class=\"AB7Lab Id5V1\"]")).click();
-   driver.findElement(By.xpath("//span[@class=\"vRMGwf oJeWuf\" and text()=\"Choose\"]")).click();
-   Thread.sleep(2000);
-   driver.findElement(By.xpath("//div[@data-value=\"Yes\"]")).click();
+   driver.findElement(By.xpath("//div[@class=\"MocG8c HZ3kWc mhLiyf LMgvRb KKjvXb DEh1R\" and @jsname=\"wQNmvb\"]")).click();
+   //Thread.sleep(2000);
+  // driver.findElement(By.xpath("//div/span[@class=\"vRMGwf oJeWuf\" and text()=\"Yes\"]")).click();
+
+driver.findElement(By.xpath("//div[@jsname=\"wQNmvb\"]/span[text()=\"Choose\"]")).click();
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    WebElement optionToSelect = wait.until(ExpectedConditions.elementToBeClickable(
+            By.xpath("//span[text()=\"Yes\"]")
+    ));
+
+// 3. Click the desired option
+    optionToSelect.click();
 
 
-//data-value="Well, now I know :-)"
+
+
+
+
+
+
+
+
 
 }
 }
