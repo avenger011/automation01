@@ -39,6 +39,7 @@ public class auto16 {
         WebElement s42=driver.findElement(By.xpath("(//div[@class=\"info w-full font-bold min-w-0\"]/p[2])[4]"));
         System.out.println("the aqi of "+s41.getText()+" "+s42.getText());
 
+
     }
 
 }
