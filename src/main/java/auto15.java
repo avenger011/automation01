@@ -14,13 +14,14 @@ public class auto15 {
 
         WebDriver driver=new ChromeDriver();
         driver.navigate().to("https://www.google.com/");
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
-        driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys("banglore");
+        driver.findElement(By.xpath("//textarea[@id='APjFqb']")).sendKeys("banglore to ");
         List<WebElement> st=driver.findElements(By.xpath("//div[@class=\"OBMEnb\"]/ul[@class=\"G43f7e\"]/li[@data-attrid=\"AutocompletePrediction\"]"));
        for(WebElement s:st)
        {
-          if( s.getText().contains("airport"))
+          if( s.getText().contains("flight"))
           {s.click();}
        }
 
