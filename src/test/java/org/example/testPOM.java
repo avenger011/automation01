@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pageObjectModel.LoginTests;
+import waitHelper.propertyReader;
 
 public class testPOM {
 
@@ -14,8 +15,10 @@ public class testPOM {
     public void test1(){
         driver.get("https://awesomeqa.com/hr/web/index.php/auth/login");
         LoginTests loginTests=new LoginTests(driver);
-        loginTests.Login("admin","Hacker@4321");
+        loginTests.Login(propertyReader.readKey("user"),propertyReader.readKey("pass"));
     }
+
+
 
 
 
